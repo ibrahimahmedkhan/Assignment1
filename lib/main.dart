@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<User> users = [
     User(name: "Google", email: "gmaild@gmail.com", color: Colors.green),
-    User(name: "FaceBook", email: "facebook@gmail.com", color: Colors.red),
+    User(name: "Facebook", email: "facebook@gmail.com", color: Colors.red),
     User(name: "Apple", email: "apple@gmail.com", color: Colors.green),
     User(name: "Meta", email: "meta@gmail.com", color: Colors.red),
   ];
@@ -72,20 +72,21 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
               padding: const EdgeInsets.fromLTRB(20, 5, 20, 0),
               children: users
-                  .map((user) => Column(
-                    children: [
-                      SizedBox(height: 8),
-                      ListTile(
+                  .map(
+                    (user) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8.9),
+                      child: ListTile(
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10)),
                           tileColor: user.color,
                           title: Text(user.name),
                           subtitle: Text(user.email),
                           // leading: Icon(Icons.account_circle, size:50)))
-                          leading: CircleAvatar(radius: 20, child: Text(user.name.substring(0,1)))),
-                    ],
-                  ))
-
+                          leading: CircleAvatar(
+                              radius: 20,
+                              child: Text(user.name.substring(0, 1)))),
+                    ),
+                  )
                   .toList())),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
