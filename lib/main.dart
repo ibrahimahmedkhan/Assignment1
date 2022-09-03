@@ -75,16 +75,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   .map(
                     (user) => Padding(
                       padding: const EdgeInsets.only(bottom: 8.9),
-                      child: ListTile(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          tileColor: user.color,
-                          title: Text(user.name),
-                          subtitle: Text(user.email),
-                          // leading: Icon(Icons.account_circle, size:50)))
-                          leading: CircleAvatar(
-                              radius: 20,
-                              child: Text(user.name.substring(0, 1)))),
+                      child: Material(
+                        elevation: 1,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: ListTile(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10)),
+                            tileColor: user.color,
+                            title: Text(user.name),
+                            subtitle: Text(user.email),
+                            leading: CircleAvatar(
+                                radius: 20,
+                                child: Text(user.name.substring(0, 1)))),
+                      ),
                     ),
                   )
                   .toList())),
