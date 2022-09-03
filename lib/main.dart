@@ -69,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: ListTile(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
-                                tileColor: user.isActive ? Colors.green : Colors.red,
+                                tileColor:
+                                    user.isActive ? Colors.green : Colors.red,
                                 title: Text(user.name),
                                 subtitle: Text(user.email),
                                 leading: CircleAvatar(
