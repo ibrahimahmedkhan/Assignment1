@@ -44,12 +44,15 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.fromLTRB(20, 60, 20, 0),
         child: Column(
           children: [
-            const TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(10.0)),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                  ),
+                  hintText: "Search",
                 ),
-                hintText: "Search",
               ),
             ),
             Expanded(
