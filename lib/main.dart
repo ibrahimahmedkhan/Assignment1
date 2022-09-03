@@ -30,10 +30,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   List<User> users = [
-    User(name: "Google", email: "gmaild@gmail.com", color: Colors.green),
-    User(name: "Facebook", email: "facebook@gmail.com", color: Colors.red),
-    User(name: "Apple", email: "apple@gmail.com", color: Colors.green),
-    User(name: "Meta", email: "meta@gmail.com", color: Colors.red),
+    User(name: "Google", email: "gmaild@gmail.com", isActive: true),
+    User(name: "Facebook", email: "facebook@gmail.com", isActive: false),
+    User(name: "Apple", email: "apple@gmail.com", isActive: true),
+    User(name: "Meta", email: "meta@gmail.com", isActive: false),
   ];
 
   @override
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: ListTile(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10)),
-                                tileColor: user.color,
+                                tileColor: user.isActive ? Colors.green : Colors.red,
                                 title: Text(user.name),
                                 subtitle: Text(user.email),
                                 leading: CircleAvatar(
@@ -90,7 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
 class User {
   final String name;
   final String email;
-  final Color color;
+  final bool isActive;
 
-  User({required this.name, required this.email, required this.color});
+  User({required this.name, required this.email, required this.isActive});
 }
